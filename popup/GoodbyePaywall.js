@@ -26,14 +26,11 @@
     // Encontrar el elemento padre más cercano que sea un <div>
     let padre = element;
     let counter = 0;
-    while (padre.parentNode !== document.body && counter <100)
+    while ((padre.parentNode !== document.body) && counter < 100){
       counter++;
-      
       padre = padre.parentNode; // Usar closest para buscar el primer <div> en la jerarquía
-      console.log(padre);
-
-    console.log("Nivel padre: " + padre)
-    console.log("Nivel superior: " + padre.parentNode)
+    }
+    
     padre.remove();
 
     // Eliminar el listener de clic
@@ -44,4 +41,11 @@
     // Quitar el estilo del elemento seleccionado
     element.style.outline = "";
   }
+
+  // Exponer una función para eliminar los listeners
+  window.removeGoodbyePaywallListeners = () => {
+    document.removeEventListener("click", ejecutarCodigoEnElemento);
+    document.removeEventListener("mouseover", mouseIn);
+    document.removeEventListener("mouseout", mouseOut);
+  };
 })();
