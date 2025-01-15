@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Selector de Elementos",
-  "version": "1.0",
-  "description": "Selecciona un elemento de la página y ejecuta código sobre él.",
+  "name": "GoodbyePaywall",
+  "version": "0.2",
+  "description": "Selecciona un elemento de la página y elimina el bloque en su totalidad.",
   "permissions": ["scripting", "activeTab", "tabs"],
   "host_permissions": ["<all_urls>"],
   "action": {
@@ -14,5 +14,10 @@
       "resources": ["popup/GoodbyePaywall.js"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
 }
