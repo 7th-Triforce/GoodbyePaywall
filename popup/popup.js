@@ -2,7 +2,7 @@ document.getElementById("startSelector").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.scripting.executeScript({
         target: { tabId: tabs[0].id },
-        files: ["popup/content.js"] // Ruta corregida
+        files: ["popup/GoodbyePaywall.js"] // Ruta corregida
       });
     });
 

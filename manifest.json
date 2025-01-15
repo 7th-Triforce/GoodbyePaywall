@@ -7,11 +7,11 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_icon": "cookiesRemover.png"
+    "default_icon": "icon.png"
   },
   "web_accessible_resources": [
     {
-      "resources": ["popup/content.js"],
+      "resources": ["popup/GoodbyePaywall.js"],
       "matches": ["<all_urls>"]
     }
   ]

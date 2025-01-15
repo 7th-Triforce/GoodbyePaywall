@@ -36,11 +36,11 @@
 ```
 GoodbyePaywall/
 ├── manifest.json          # Configuración principal de la extensión
-├── cookiesRemover.png     # Icono de la extensión
+├── icon.png     # Icono de la extensión
 ├── popup/
 │   ├── popup.html         # Interfaz del popup
 │   ├── popup.js           # Lógica del popup
-│   └── content.js         # Scripts inyectados en las páginas web
+│   └── GoodbyePaywall.js         # Scripts inyectados en las páginas web
 ```
 ---
 
