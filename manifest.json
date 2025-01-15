@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Selector de Elementos",
+  "version": "1.0",
+  "description": "Selecciona un elemento de la página y ejecuta código sobre él.",
+  "permissions": ["scripting", "activeTab", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "cookiesRemover.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
