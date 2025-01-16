@@ -26,7 +26,7 @@
     // Encontrar el elemento padre más cercano que sea un <div>
     let padre = element;
     let counter = 0;
-    while ((padre.parentNode !== document.body) && counter < 100){
+    while ((padre.parentNode !== document.body) && counter < 50){
       counter++;
       padre = padre.parentNode; // Usar closest para buscar el primer <div> en la jerarquía
     }
