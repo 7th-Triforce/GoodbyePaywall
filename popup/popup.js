@@ -28,22 +28,23 @@ document.getElementById("cancelSelector").addEventListener("click", () => {
 
 // Referencia al toggle de modo oscuro
 const darkModeToggle = document.getElementById("darkModeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
-// Cargar preferencia guardada
+// Cargar la preferencia guardada
 chrome.storage.sync.get("darkMode", (data) => {
     if (data.darkMode) {
         document.body.classList.add("dark-mode");
-        darkModeToggle.checked = true;
+        themeIcon.src = "../images/moon.svg";
     }
 });
 
-// Guardar preferencia cuando el usuario cambie el switch
-darkModeToggle.addEventListener("change", () => {
-    if (darkModeToggle.checked) {
-        document.body.classList.add("dark-mode");
-        chrome.storage.sync.set({ darkMode: true });
-    } else {
-        document.body.classList.remove("dark-mode");
-        chrome.storage.sync.set({ darkMode: false });
-    }
+// Evento para cambiar el tema
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    themeIcon.src = isDarkMode ? "../images/moon.svg" : "../images/sun.svg";
+
+    // Guardar la preferencia en Chrome Storage
+    chrome.storage.sync.set({ darkMode: isDarkMode });
 });
