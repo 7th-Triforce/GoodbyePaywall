@@ -18,11 +18,61 @@
     --btn-cancel-hover: #b02a37;
 }
 
+/* Contenedor flotante */
+#themeSwitcher {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+#themeSwitcher:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo del botón */
+#darkModeToggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Estilo del ícono */
+#themeIcon {
+    width: 70%;
+    height: 70%;
+    transition: filter 0.3s;
+    object-fit: contain;
+}
+
 /* Modo oscuro */
 .dark-mode {
-    background: var(--bg-dark);
-    color: var(--text-dark);
+    background-color: #222;
+    color: #fff;
 }
+
+.dark-mode #themeSwitcher {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #themeSwitcher:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode #themeIcon {
+    filter: invert(1); /* Invierte el color del SVG */
+}
+
 
 /* Estilos generales */
 body {
@@ -39,6 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 150px;
 }
 
 /* Botones */
