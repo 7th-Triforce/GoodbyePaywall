@@ -25,3 +25,26 @@ document.getElementById("cancelSelector").addEventListener("click", () => {
 
   window.close();
 });
+
+// Referencia al toggle de modo oscuro
+const darkModeToggle = document.getElementById("darkModeToggle");
+const themeIcon = document.getElementById("themeIcon");
+
+// Cargar la preferencia guardada
+chrome.storage.sync.get("darkMode", (data) => {
+    if (data.darkMode) {
+        document.body.classList.add("dark-mode");
+        themeIcon.src = "../images/moon.svg";
+    }
+});
+
+// Evento para cambiar el tema
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    themeIcon.src = isDarkMode ? "../images/moon.svg" : "../images/sun.svg";
+
+    // Guardar la preferencia en Chrome Storage
+    chrome.storage.sync.set({ darkMode: isDarkMode });
+});
