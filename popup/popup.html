@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodbye Paywall</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Goodbye Paywall</h1>
-        <p>Selecciona un elemento para eliminarlo de la página (Hasta el body).</p>
-        
-        <button id="startSelector" class="btn">Seleccionar Elemento</button>
-        <button id="cancelSelector" class="btn cancel">Cancelar</button>
-    </div>
 
-    <script src="popup.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goodbye Paywall</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Goodbye Paywall</h1>
+    <p>Selecciona un elemento para eliminarlo.</p>
+
+    <button id="startSelector" class="btn">Seleccionar Elemento</button>
+    <button id="cancelSelector" class="btn cancel">Cancelar</button>
+
+    <!-- Switch para activar/desactivar el modo oscuro -->
+    <div class="toggle-container">
+      <span>🌞</span>
+      <ion-icon name="sunny-outline"></ion-icon>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+      <span>🌙</span>
+      <ion-icon name="sunny-outline"></ion-icon>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
+
 </html>

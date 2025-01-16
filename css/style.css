@@ -1,0 +1,136 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* Variables de colores */
+:root {
+    --bg-light: #f4f4f4;
+    --text-light: #333;
+    --bg-dark: #222;
+    --text-dark: #f4f4f4;
+    --btn-primary: #007bff;
+    --btn-hover: #0056b3;
+    --btn-cancel: #dc3545;
+    --btn-cancel-hover: #b02a37;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Estilos generales */
+body {
+    width: 260px;
+    padding: 20px;
+    background: var(--bg-light);
+    color: var(--text-light);
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botones */
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+#startSelector {
+    background: var(--btn-primary);
+    color: white;
+}
+
+#startSelector:hover {
+    background: var(--btn-hover);
+}
+
+.cancel {
+    background: var(--btn-cancel);
+    color: white;
+}
+
+.cancel:hover {
+    background: var(--btn-cancel-hover);
+}
+
+/* Toggle (Modo Oscuro) */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.toggle-container span {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+/* Switch estilo slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--btn-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}

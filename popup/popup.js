@@ -25,3 +25,25 @@ document.getElementById("cancelSelector").addEventListener("click", () => {
 
   window.close();
 });
+
+// Referencia al toggle de modo oscuro
+const darkModeToggle = document.getElementById("darkModeToggle");
+
+// Cargar preferencia guardada
+chrome.storage.sync.get("darkMode", (data) => {
+    if (data.darkMode) {
+        document.body.classList.add("dark-mode");
+        darkModeToggle.checked = true;
+    }
+});
+
+// Guardar preferencia cuando el usuario cambie el switch
+darkModeToggle.addEventListener("change", () => {
+    if (darkModeToggle.checked) {
+        document.body.classList.add("dark-mode");
+        chrome.storage.sync.set({ darkMode: true });
+    } else {
+        document.body.classList.remove("dark-mode");
+        chrome.storage.sync.set({ darkMode: false });
+    }
+});
